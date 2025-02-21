@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsBiblioteca;
 
-namespace WindowsFormsApp
+namespace WindowsForms.Formularios
 {
-    public partial class Frm_ValidaCPF2 : Form
+    public partial class Frm_ValidaCPF2_UC: UserControl
     {
-        public Frm_ValidaCPF2()
+        public Frm_ValidaCPF2_UC()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace WindowsFormsApp
                 }
                 else
                 {
-                    if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                    if (MessageBox.Show("Você deseja realmente validar o CPF?", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         bool validaCPF = false;
                         validaCPF = Cls_Uteis.Valida(Msk_CPF.Text);
@@ -53,7 +53,7 @@ namespace WindowsFormsApp
                         }
                         else
                         {
-                            MessageBox.Show("CPF INVÁLIDO", "Mensagem de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                            MessageBox.Show("CPF INVÁLIDO", "Mensagem de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

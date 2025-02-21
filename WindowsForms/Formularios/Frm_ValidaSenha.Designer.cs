@@ -1,4 +1,4 @@
-﻿namespace HelloWorld
+﻿namespace WindowsFormsApp
 {
     partial class Frm_ValidaSenha
     {

@@ -71,11 +71,23 @@
     <Compile Include="Formularios\Frm_Mascara_UC.Designer.cs">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_ValidaCPF2_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_ValidaCPF2_UC.Designer.cs">
+      <DependentUpon>Frm_ValidaCPF2_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_ValidaCPF_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Formularios\Frm_ValidaCPF_UC.Designer.cs">
       <DependentUpon>Frm_ValidaCPF_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_ValidaSenha_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_ValidaSenha_UC.Designer.cs">
+      <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Menu_Principal_MDI.cs">
       <SubType>Form</SubType>
@@ -157,8 +169,14 @@
     <EmbeddedResource Include="Formularios\Frm_Mascara_UC.resx">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_ValidaCPF2_UC.resx">
+      <DependentUpon>Frm_ValidaCPF2_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_ValidaCPF_UC.resx">
       <DependentUpon>Frm_ValidaCPF_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_ValidaSenha_UC.resx">
+      <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu_Principal_MDI.resx">
       <DependentUpon>Frm_Menu_Principal_MDI.cs</DependentUpon>

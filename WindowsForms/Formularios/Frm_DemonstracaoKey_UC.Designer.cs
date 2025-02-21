@@ -84,6 +84,7 @@
             this.Btn_Reset.TabIndex = 9;
             this.Btn_Reset.Text = "Limpa";
             this.Btn_Reset.UseVisualStyleBackColor = true;
+            this.Btn_Reset.Click += new System.EventHandler(this.Btn_Reset_Click);
             // 
             // Txt_Msg
             // 
@@ -104,6 +105,7 @@
             this.Txt_Input.Name = "Txt_Input";
             this.Txt_Input.Size = new System.Drawing.Size(100, 20);
             this.Txt_Input.TabIndex = 7;
+            this.Txt_Input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Input_KeyDown);
             // 
             // Frm_DemonstracaoKey_UC
             // 

@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsBiblioteca;
 
-namespace WindowsFormsApp
+namespace WindowsForms.Formularios
 {
-    public partial class Frm_ValidaSenha : Form
+    public partial class Frm_ValidaSenha_UC: UserControl
     {
         bool VerSenhaTxt = false;
 
-        public Frm_ValidaSenha()
+        public Frm_ValidaSenha_UC()
         {
             InitializeComponent();
         }
@@ -31,7 +30,7 @@ namespace WindowsFormsApp
         {
             Cls_Uteis.ChecaForcaSenha verifica = new Cls_Uteis.ChecaForcaSenha();
             Cls_Uteis.ChecaForcaSenha.ForcaDaSenha forca;
-            
+
             forca = verifica.GetForcaDaSenha(Txt_Senha.Text);
             Lbl_Resultado.Text = forca.ToString();
 
@@ -68,3 +67,4 @@ namespace WindowsFormsApp
         }
     }
 }
+

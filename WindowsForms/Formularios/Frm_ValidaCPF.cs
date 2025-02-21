@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsBiblioteca;
 
-namespace HelloWorld
+namespace WindowsFormsApp
 {
     public partial class Frm_ValidaCPF : Form
     {

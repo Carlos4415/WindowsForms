@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms;
 
-namespace HelloWorld
+namespace WindowsFormsApp
 {
     internal static class Program
     {
