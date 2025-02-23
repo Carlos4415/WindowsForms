@@ -71,6 +71,12 @@
     <Compile Include="Formularios\Frm_Mascara_UC.Designer.cs">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_Questao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_Questao.Designer.cs">
+      <DependentUpon>Frm_Questao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_ValidaCPF2_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="Formularios\Frm_Mascara_UC.resx">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_Questao.resx">
+      <DependentUpon>Frm_Questao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_ValidaCPF2_UC.resx">
       <DependentUpon>Frm_ValidaCPF2_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +247,10 @@
     <Content Include="Imagens\Frm_ValidaCPF2.png" />
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
     <Content Include="Imagens\Frm_ValidaSenha.png" />
+    <Content Include="Imagens\Pasta_100.ico" />
+    <Content Include="Imagens\Pasta_100.png" />
+    <Content Include="Imagens\Ponto_Interrogação_96.ico" />
+    <Content Include="Imagens\Ponto_Interrogação_96.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WindowsFormsBiblioteca\WindowsFormsBiblioteca.csproj">
