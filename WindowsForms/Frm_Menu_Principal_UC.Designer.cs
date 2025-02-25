@@ -44,6 +44,8 @@
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbc_Aplicacoes = new System.Windows.Forms.TabControl();
             this.Iml_Imagens = new System.Windows.Forms.ImageList(this.components);
+            this.açõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mnu_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             // 
             this.Mnu_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
+            this.açõesToolStripMenuItem,
             this.windowsToolStripMenuItem});
             this.Mnu_Principal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.Mnu_Principal.Location = new System.Drawing.Point(0, 0);
@@ -176,6 +179,22 @@
             this.Iml_Imagens.Images.SetKeyName(3, "Frm_ValidaCPF.png");
             this.Iml_Imagens.Images.SetKeyName(4, "Frm_ValidaCPF2.png");
             this.Iml_Imagens.Images.SetKeyName(5, "Frm_ValidaSenha.png");
+            this.Iml_Imagens.Images.SetKeyName(6, "Ponto_Interrogação_96.png");
+            // 
+            // açõesToolStripMenuItem
+            // 
+            this.açõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.abrirImagemToolStripMenuItem});
+            this.açõesToolStripMenuItem.Name = "açõesToolStripMenuItem";
+            this.açõesToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.açõesToolStripMenuItem.Text = "Ações";
+            // 
+            // abrirImagemToolStripMenuItem
+            // 
+            this.abrirImagemToolStripMenuItem.Name = "abrirImagemToolStripMenuItem";
+            this.abrirImagemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirImagemToolStripMenuItem.Text = "Abrir Imagem";
+            this.abrirImagemToolStripMenuItem.Click += new System.EventHandler(this.abrirImagemToolStripMenuItem_Click);
             // 
             // Frm_Menu_Principal_UC
             // 
@@ -211,5 +230,7 @@
         private System.Windows.Forms.TabControl Tbc_Aplicacoes;
         private System.Windows.Forms.ImageList Iml_Imagens;
         private System.Windows.Forms.ToolStripMenuItem apagarAbaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem açõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirImagemToolStripMenuItem;
     }
 }
