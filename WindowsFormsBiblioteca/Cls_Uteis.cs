@@ -129,5 +129,15 @@ namespace WindowsFormsBiblioteca
                     return ForcaDaSenha.Segura;
             }
         }
+
+        public static bool validaSenhaLogin(string senha)
+        {
+            if (senha == "123456")
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
