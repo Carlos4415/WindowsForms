@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms;
+using WindowsForms.Formularios;
 
 namespace WindowsFormsApp
 {
@@ -19,7 +20,7 @@ namespace WindowsFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Menu_Principal_UC());
+            Application.Run(new Frm_MouseCursor());
         }
     }
 }
