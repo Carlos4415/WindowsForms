@@ -20,7 +20,7 @@ namespace WindowsFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_MouseCursor());
+            Application.Run(new Frm_Menu_Flutuante());
         }
     }
 }

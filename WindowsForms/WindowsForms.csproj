@@ -113,6 +113,12 @@
     <Compile Include="Formularios\Frm_ValidaSenha_UC.Designer.cs">
       <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Menu_Flutuante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Menu_Flutuante.Designer.cs">
+      <DependentUpon>Frm_Menu_Flutuante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Menu_Principal_MDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_ValidaSenha_UC.resx">
       <DependentUpon>Frm_ValidaSenha_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Menu_Flutuante.resx">
+      <DependentUpon>Frm_Menu_Flutuante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu_Principal_MDI.resx">
       <DependentUpon>Frm_Menu_Principal_MDI.cs</DependentUpon>
