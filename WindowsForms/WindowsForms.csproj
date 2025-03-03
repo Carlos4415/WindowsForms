@@ -59,6 +59,12 @@
     <Compile Include="Formularios\Frm_ArquivoImagem_UC.Designer.cs">
       <DependentUpon>Frm_ArquivoImagem_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Frm_CadastroCliente_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_CadastroCliente_UC.Designer.cs">
+      <DependentUpon>Frm_CadastroCliente_UC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_DemonstracaoKey_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <EmbeddedResource Include="Formularios\Frm_ArquivoImagem_UC.resx">
       <DependentUpon>Frm_ArquivoImagem_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_CadastroCliente_UC.resx">
+      <DependentUpon>Frm_CadastroCliente_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_DemonstracaoKey_UC.resx">
       <DependentUpon>Frm_DemonstracaoKey_UC.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +297,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Frm_Principal.ico" />
+    <Content Include="Imagens\Cadastros.png" />
     <Content Include="Imagens\DeleteAll.png" />
     <Content Include="Imagens\DeleteLeft.png" />
     <Content Include="Imagens\DeleteRight.png" />
@@ -309,6 +319,8 @@
     <Content Include="Imagens\icons8-question-mark-96.ico" />
     <Content Include="Imagens\icons8-question-mark-96.png" />
     <Content Include="Imagens\key.png" />
+    <Content Include="Imagens\money.png" />
+    <Content Include="Imagens\user.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WindowsFormsBiblioteca\WindowsFormsBiblioteca.csproj">
