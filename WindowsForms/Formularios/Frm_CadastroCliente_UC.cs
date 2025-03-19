@@ -78,6 +78,8 @@ namespace WindowsForms.Formularios
             Tls_Principal.Items[2].ToolTipText = "Atualize o cliente já cadastrado";
             Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
+
+            LimparFormulario();
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
@@ -131,7 +133,7 @@ namespace WindowsForms.Formularios
 
         private void limparToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão LIMPAR");
+            LimparFormulario();
         }
 
         Cliente.Unit LeituraFormulario()
@@ -236,6 +238,26 @@ namespace WindowsForms.Formularios
                     }
                 }
             }
+        }
+
+        private void LimparFormulario()
+        {
+            Txt_Codigo.Text = "";
+            Txt_NomeCliente.Text = "";
+            Txt_NomeMae.Text = "";
+            Txt_CPF.Text = "";
+            Txt_NomePai.Text = "";
+            Rdb_Masculino.Checked = true;
+            Chk_TemPai.Checked = false;
+            Txt_CEP.Text = "";
+            Txt_Logradouro.Text = "";
+            Txt_Complemento.Text = "";
+            Txt_Bairro.Text = "";
+            Txt_Cidade.Text = "";
+            Cmb_Estados.SelectedIndex = -1;
+            Txt_Telefone.Text = "";
+            Txt_Profissao.Text = "";
+            Txt_RendaFamiliar.Text = "";
         }
     }
 }
