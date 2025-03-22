@@ -7,10 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsBiblioteca.Classes;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.VisualBasic;
 using WindowsFormsBiblioteca;
+using WindowsFormsBiblioteca.Classes;
+using WindowsFormsBiblioteca.Databases;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace WindowsForms.Formularios
 {
@@ -78,8 +81,6 @@ namespace WindowsForms.Formularios
             Tls_Principal.Items[2].ToolTipText = "Atualize o cliente já cadastrado";
             Tls_Principal.Items[3].ToolTipText = "Apaga o cliente selecionado";
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
-
-            LimparFormulario();
         }
 
         private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
@@ -103,8 +104,26 @@ namespace WindowsForms.Formularios
                 C.ValidaClasse();
                 C.ValidaComplemento();
 
-                MessageBox.Show("Classe foi inicializada sem erros", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string clienteJson = Cliente.SerializedClassUnit(C);
+                Fichario F = new Fichario("../../../Fichario");
 
+                if (F.status)
+                {
+                    F.Incluir(C.Id, clienteJson);
+
+                    if (F.status)
+                    {
+                        MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (ValidationException Ex)
             {
