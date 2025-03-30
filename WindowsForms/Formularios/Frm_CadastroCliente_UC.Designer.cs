@@ -54,6 +54,7 @@
             this.Txt_RendaFamiliar = new System.Windows.Forms.TextBox();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Grp_Codigo = new System.Windows.Forms.GroupBox();
+            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
             this.Grp_Genero = new System.Windows.Forms.GroupBox();
             this.Rdb_Indefinido = new System.Windows.Forms.RadioButton();
@@ -286,13 +287,24 @@
             // 
             // Grp_Codigo
             // 
+            this.Grp_Codigo.Controls.Add(this.Btn_Busca);
             this.Grp_Codigo.Controls.Add(this.Txt_Codigo);
             this.Grp_Codigo.Location = new System.Drawing.Point(12, 45);
             this.Grp_Codigo.Name = "Grp_Codigo";
-            this.Grp_Codigo.Size = new System.Drawing.Size(227, 53);
+            this.Grp_Codigo.Size = new System.Drawing.Size(319, 53);
             this.Grp_Codigo.TabIndex = 29;
             this.Grp_Codigo.TabStop = false;
             this.Grp_Codigo.Text = "groupBox1";
+            // 
+            // Btn_Busca
+            // 
+            this.Btn_Busca.Location = new System.Drawing.Point(221, 17);
+            this.Btn_Busca.Name = "Btn_Busca";
+            this.Btn_Busca.Size = new System.Drawing.Size(91, 23);
+            this.Btn_Busca.TabIndex = 2;
+            this.Btn_Busca.Text = "button1";
+            this.Btn_Busca.UseVisualStyleBackColor = true;
+            this.Btn_Busca.Click += new System.EventHandler(this.Btn_Busca_Click);
             // 
             // Grp_DadosPessoais
             // 
@@ -565,5 +577,6 @@
         private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.ToolStripButton apagarToolStripButton;
         private System.Windows.Forms.ToolStripButton limparToolStripButton;
+        private System.Windows.Forms.Button Btn_Busca;
     }
 }
