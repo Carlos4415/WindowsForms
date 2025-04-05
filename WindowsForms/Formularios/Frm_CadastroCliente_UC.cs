@@ -104,27 +104,8 @@ namespace WindowsForms.Formularios
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-
-                string clienteJson = Cliente.SerializedClassUnit(C);
-                Fichario F = new Fichario("../../../Fichario");
-
-                if (F.status)
-                {
-                    F.Incluir(C.Id, clienteJson);
-
-                    if (F.status)
-                    {
-                        MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                C.IncluirFichario("../../../Fichario");
+                MessageBox.Show("OK: Identificador incluido com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (ValidationException Ex)
             {
@@ -144,27 +125,23 @@ namespace WindowsForms.Formularios
             }
             else
             {
-                Fichario F = new Fichario("../../../Fichario");
-
-                if (F.status)
+                try
                 {
-                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit C = new Cliente.Unit();
+                    C = C.BuscarFichario(Txt_Codigo.Text, "../../../Fichario");
 
-                    if (F.status)
+                    if (C == null)
                     {
-                        Cliente.Unit C = new Cliente.Unit();
-                        C = Cliente.DesSerializedClassUnit(clienteJson);
-
-                        EscreveFormulario(C);
+                        MessageBox.Show("Identificador não encontrado", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        EscreveFormulario(C);
                     }
                 }
-                else
+                catch(Exception Ex)
                 {
-                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -183,28 +160,8 @@ namespace WindowsForms.Formularios
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-
-                    string clienteJson = Cliente.SerializedClassUnit(C);
-
-                    Fichario F = new Fichario("../../../Fichario");
-
-                    if (F.status)
-                    {
-                        F.Alterar(C.Id, clienteJson);
-
-                        if (F.status)
-                        {
-                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    C.AlterarFichario("../../../Fichario");
+                    MessageBox.Show("OK: Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ValidationException Ex)
                 {
@@ -225,17 +182,17 @@ namespace WindowsForms.Formularios
             }
             else 
             {
-                Fichario F = new Fichario("../../../Fichario");
-
-                if (F.status)
+                try
                 {
-                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    Cliente.Unit C = new Cliente.Unit();
+                    C = C.BuscarFichario(Txt_Codigo.Text, "../../../Fichario");
 
-                    if (F.status)
+                    if(C == null)
                     {
-                        Cliente.Unit C = new Cliente.Unit();
-                        C = Cliente.DesSerializedClassUnit(clienteJson);
-
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
                         EscreveFormulario(C);
 
                         Frm_Questao Db = new Frm_Questao("icons8_question_mark_96", "Você quer excluir o cliente?");
@@ -243,28 +200,16 @@ namespace WindowsForms.Formularios
 
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            F.Apagar(Txt_Codigo.Text);
+                            C.ApagarFichario("../../../Fichario");
 
-                            if (F.status)
-                            {
-                                MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LimparFormulario();
-                            }
-                            else
-                            {
-                                MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("OK: Identificador apagado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LimparFormulario();
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
+                }
+                catch(Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

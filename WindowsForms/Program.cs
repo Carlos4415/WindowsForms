@@ -1,12 +1,8 @@
 ﻿// Aplicação Windows Forms com menu principal
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsForms;
-using WindowsForms.Formularios;
 
 namespace WindowsFormsApp
 {
