@@ -136,7 +136,7 @@ namespace WindowsFormsBiblioteca
 
         public static bool validaSenhaLogin(string senha)
         {
-            if (senha == "123456")
+            if (senha == DateTime.Now.ToString("ddMMyyyy"))
             {
                 return true;
             }
