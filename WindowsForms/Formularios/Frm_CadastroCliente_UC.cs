@@ -309,7 +309,7 @@ namespace WindowsForms.Formularios
 
                         Cmb_Estados.SelectedIndex = -1;
 
-                        for (int i = 0; i < Cmb_Estados.Items.Count - 1; i++)
+                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
                         {
                             var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
 
@@ -404,20 +404,25 @@ namespace WindowsForms.Formularios
 
         private void Btn_Busca_Click(object sender, EventArgs e)
         {
-            Fichario F = new Fichario("../../../Fichario");
-
-            if (F.status)
+            try
             {
-                List<string> List = new List<string>();
-                List = F.BuscarTodos();
+                Cliente.Unit C = new Cliente.Unit();
 
-                if (F.status)
+                List<string> List = new List<string>();
+                List = C.ListaFichario("../../../Fichario");
+
+                if (List == null)
+                {
+                    MessageBox.Show("Base de dados está vazia. Não existe nenhum identificador cadastrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
                 {
                     List<List<string>> ListaBusca = new List<List<string>>();
 
                     for (int i = 0; i <= List.Count - 1; i++)
                     {
-                        Cliente.Unit C = Cliente.DesSerializedClassUnit(List[i]);
+                        C = Cliente.DesSerializedClassUnit(List[i]);
+
                         ListaBusca.Add(new List<string> { C.Id, C.Nome });
                     }
 
@@ -427,22 +432,22 @@ namespace WindowsForms.Formularios
                     if (FForm.DialogResult == DialogResult.OK)
                     {
                         var idSelect = FForm.idSelect;
-                        string clienteJson = F.Buscar(idSelect);
+                        C = C.BuscarFichario(idSelect, "../../../Fichario");
 
-                        Cliente.Unit C = new Cliente.Unit();
-                        C = Cliente.DesSerializedClassUnit(clienteJson);
-
-                        EscreveFormulario(C);
+                        if (C == null)
+                        {
+                            MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            EscreveFormulario(C);
+                        }
                     }
                 }
-                else
-                {
-                    MessageBox.Show("ERR " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
+
+            } catch (Exception Ex)
             {
-                MessageBox.Show("ERR " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

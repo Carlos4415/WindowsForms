@@ -117,6 +117,7 @@ namespace WindowsFormsBiblioteca.Classes
                 }
             }
 
+            #region "CRUD do Fichario"
             public void IncluirFichario(string Conexao)
             {
                 string clienteJson = Cliente.SerializedClassUnit(this);
@@ -191,6 +192,23 @@ namespace WindowsFormsBiblioteca.Classes
                     throw new Exception(F.mensagem);
                 }
             }
+
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+
+                if (F.status)
+                {
+                    List<string> todosJson = F.BuscarTodos();
+                    return todosJson;
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            #endregion
         }
 
         public class List
